@@ -1,9 +1,10 @@
 
 /**
- * Write a description of SecondRatings here.
+ * This class adds functionality, including figuring average ratings
+ * and the ability to retrieve additional info with various means
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author      Josh Janoe
+ * @version     10/05/2020
  */
 
 import java.util.*;
