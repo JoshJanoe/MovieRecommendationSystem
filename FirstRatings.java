@@ -71,7 +71,6 @@ public class FirstRatings {
         CSVParser parser = fr.getCSVParser();
         ArrayList<Rater> raterList = new ArrayList<Rater>();
         HashMap<String,ArrayList<Rating>> raterMap = new HashMap<String,ArrayList<Rating>>();
-        //ArrayList<Rating> ratings = new ArrayList<Rating>();
         for (CSVRecord record : parser) {
             ArrayList<Rating> ratings = new ArrayList<Rating>();
             String raterID = record.get("rater_id");
@@ -111,7 +110,6 @@ public class FirstRatings {
             String ID = r.getID();
             int numRatings = r.numRatings();
             ArrayList<String> ratings = r.getItemsRated();
-            //System.out.println("User "+ID+" has "+numRatings+" ratings"+"\n"+ratings);
             if (ID==raterID) System.out.println("User "+ID+" has "+numRatings+" ratings"+"\n"+ratings);
             if (numRatings>maxRatings) maxRatings=numRatings;
             for (String s : ratings) {
