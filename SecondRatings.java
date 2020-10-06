@@ -15,8 +15,6 @@ public class SecondRatings {
     private String path;
     
     public SecondRatings() {
-        // default constructor
-        //this("ratedmoviesfull.csv", "ratings.csv");
         this("ratedmovies_short.csv", "ratings_short.csv");
         path = "F:\\Java Specialization\\Course 5 - Build a Recommendation System\\Step Two\\";
     }
@@ -36,16 +34,12 @@ public class SecondRatings {
     }
     
     private double getAverageByID (String id, int minimalRaters) {
-        //---id is (or should be) MovieID---
         double totalRatings = 0;
         double totalStars = 0;
-        //getAllRatings
         for (Rater r : myRaters) {
             ArrayList<String> moviesRated = r.getItemsRated();
-            //System.out.println(ratings);
             for (String s : moviesRated) {
                 double rating = r.getRating(s);
-                //System.out.println("Rater: "+r.getID()+"\tMovie: "+s+"\tRating: "+rating+"\tID: "+id);
                 if (s.equals(id)){
                     totalStars += rating;
                     totalRatings++;
@@ -54,12 +48,10 @@ public class SecondRatings {
         }
         if (totalRatings < minimalRaters) return 0.0;
         double average = totalStars/totalRatings;
-        //System.out.println("Total Stars: "+totalStars+"\tTotal Ratings: "+totalRatings+"\tAverage Rating: "+average);
         return average;
     }
     
     public void testGetAverageByID () {
-        //The Godfather (0068646)
         Movie m = myMovies.get(2);
         String currID = m.getID();
         String title = m.getTitle();
@@ -80,7 +72,6 @@ public class SecondRatings {
     }
     
     public void testGetAverageRatings () {
-        //The Godfather (0068646)
         int minRaters = 1;
         ArrayList<Rating> avgRatings = getAverageRatings(minRaters);
         for (Rating r : avgRatings) {
