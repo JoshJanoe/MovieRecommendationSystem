@@ -36,7 +36,7 @@ public class FirstRatings {
     
     public void testLoadMovies () {
         String filename = "ratedmovies_short.csv";
-        filename = "ratedmoviesfull.csv";
+        //filename = "ratedmoviesfull.csv";
         ArrayList<Movie> movies = loadMovies(path+filename);
         int comedies = 0;
         int longMovies = 0;
@@ -67,10 +67,12 @@ public class FirstRatings {
     }
     
     public ArrayList<Rater> loadRaters (String filename) {
+        //creates ArrayList 
         FileResource fr = new FileResource(filename);
         CSVParser parser = fr.getCSVParser();
         ArrayList<Rater> raterList = new ArrayList<Rater>();
         HashMap<String,ArrayList<Rating>> raterMap = new HashMap<String,ArrayList<Rating>>();
+        //ArrayList<Rating> ratings = new ArrayList<Rating>();
         for (CSVRecord record : parser) {
             ArrayList<Rating> ratings = new ArrayList<Rating>();
             String raterID = record.get("rater_id");
@@ -84,7 +86,9 @@ public class FirstRatings {
             raterMap.put(raterID,ratings);
         }   
         for (String s : raterMap.keySet()) {
-            Rater currRater = new Rater(s);
+            Rater currRater = new EfficientRater(s); 
+            ////changed from Rater currRater = new PlainRater(s) after making EfficientRater class
+            //changed from Rater currRater = new Rater(s) after making Rater Interface
             for (Rating r : raterMap.get(s)) {
                 String item = r.getItem();
                 double dbl = r.getValue();
@@ -97,7 +101,7 @@ public class FirstRatings {
     
     public void testLoadRaters() {
         String filename = "ratings_short.csv";
-        filename = "ratings.csv";
+        //filename = "ratings.csv";
         ArrayList<Rater> raters = loadRaters(path+filename);
         System.out.println("Total Raters: "+raters.size());
         
@@ -110,6 +114,7 @@ public class FirstRatings {
             String ID = r.getID();
             int numRatings = r.numRatings();
             ArrayList<String> ratings = r.getItemsRated();
+            //System.out.println("User "+ID+" has "+numRatings+" ratings"+"\n"+ratings);
             if (ID==raterID) System.out.println("User "+ID+" has "+numRatings+" ratings"+"\n"+ratings);
             if (numRatings>maxRatings) maxRatings=numRatings;
             for (String s : ratings) {
