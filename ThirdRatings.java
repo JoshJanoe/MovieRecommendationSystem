@@ -15,8 +15,8 @@ public class ThirdRatings {
     
     public ThirdRatings() {
         // default constructor
-        this("ratings_short.csv");
-        //this("ratings.csv");
+        //this("ratings_short.csv");
+        this("ratings.csv");
         path = "F:\\Java Specialization\\Course 5 - Build a Recommendation System\\Step Two\\";
     }
     

@@ -16,7 +16,7 @@ public class MovieRunnerAverage {
         int raterSize = sr.getRaterSize();
         System.out.println("Movies: "+movieSize+"\tRaters: "+raterSize);
         
-        int minRatings = 1;
+        int minRatings = 12;
         ArrayList<Rating> avgRatings = sr.getAverageRatings(minRatings);
         Collections.sort(avgRatings);
         for (Rating r : avgRatings) {
@@ -30,7 +30,7 @@ public class MovieRunnerAverage {
     
     public void getAverageRatingOneMovie () {
         SecondRatings sr = new SecondRatings();
-        String movie = "The Godfather";
+        String movie = "Vacation";
         String id = sr.getID(movie);
         ArrayList<Rating> ratings = sr.getAverageRatings(0);
         for (Rating r : ratings) {

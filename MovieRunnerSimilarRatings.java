@@ -65,7 +65,7 @@ public class MovieRunnerSimilarRatings {
         MovieDatabase.initialize("ratedmoviesfull.csv");
         FourthRatings fr = new FourthRatings();
         
-        String id = "65";
+        String id = "71";
         int numSimilarRaters = 20;
         int minimalRaters = 5;
         
@@ -86,10 +86,10 @@ public class MovieRunnerSimilarRatings {
         MovieDatabase.initialize("ratedmoviesfull.csv");
         FourthRatings fr = new FourthRatings();
         
-        String id = "65";
+        String id = "964";
         int numSimilarRaters = 20;
         int minimalRaters = 5;
-        String genre = "Action";
+        String genre = "Mystery";
         Filter genreFilter = new GenreFilter(genre);
         
         ArrayList<Rating> similar = fr.getSimilarRatingsWithFilter( id, numSimilarRaters, minimalRaters, genreFilter);
@@ -109,10 +109,10 @@ public class MovieRunnerSimilarRatings {
         MovieDatabase.initialize("ratedmoviesfull.csv");
         FourthRatings fr = new FourthRatings();
         
-        String id = "1034";
+        String id = "120";
         int numSimilarRaters = 10;
-        int minimalRaters = 3;
-        String director = "Clint Eastwood,Sydney Pollack,David Cronenberg,Oliver Stone";
+        int minimalRaters = 2;
+        String director = "Clint Eastwood,J.J. Abrams,Alfred Hitchcock,Sydney Pollack,David Cronenberg,Oliver Stone,Mike Leigh";
         Filter directorFilter = new DirectorsFilter(director);
         
         ArrayList<Rating> similar = fr.getSimilarRatingsWithFilter( id, numSimilarRaters, minimalRaters, directorFilter);
@@ -129,10 +129,10 @@ public class MovieRunnerSimilarRatings {
         RaterDatabase.initialize("ratings.csv");
         MovieDatabase.initialize("ratedmoviesfull.csv");
         
-        int minRatings = 1;
-        int minutesMin = 100;
-        int minutesMax = 200;
-        String genre = "Adventure";
+        //int minRatings = 3;
+        int minutesMin = 80;
+        int minutesMax = 160;
+        String genre = "Drama";
         Filter minutesFilter = new MinutesFilter(minutesMin,minutesMax);
         Filter genreFilter = new GenreFilter(genre);
         AllFilters multiFilter = new AllFilters();
@@ -140,9 +140,9 @@ public class MovieRunnerSimilarRatings {
         multiFilter.addFilter(genreFilter);
         FourthRatings fr = new FourthRatings();
                
-        String id = "65";
+        String id = "168";
         int numSimilarRaters = 10;
-        int minimalRaters = 5;
+        int minimalRaters = 3;
                 
         ArrayList<Rating> similar = fr.getSimilarRatingsWithFilter( id, numSimilarRaters, minimalRaters, multiFilter);
         for (Rating r : similar) {
@@ -158,10 +158,10 @@ public class MovieRunnerSimilarRatings {
         RaterDatabase.initialize("ratings.csv");
         MovieDatabase.initialize("ratedmoviesfull.csv");
         
-        int minRatings = 1;
-        int minutesMin = 80;
-        int minutesMax = 100;
-        int year = 2000;
+        //int minRatings = 1;
+        int minutesMin = 70;
+        int minutesMax = 200;
+        int year = 1975;
         Filter minutesFilter = new MinutesFilter(minutesMin,minutesMax);
         Filter yearFilter = new YearAfterFilter(year);
         AllFilters multiFilter = new AllFilters();
@@ -169,7 +169,7 @@ public class MovieRunnerSimilarRatings {
         multiFilter.addFilter(yearFilter);
         FourthRatings fr = new FourthRatings();
                
-        String id = "65";
+        String id = "314";
         int numSimilarRaters = 10;
         int minimalRaters = 5;
                 

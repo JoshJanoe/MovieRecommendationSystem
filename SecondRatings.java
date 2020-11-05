@@ -16,8 +16,8 @@ public class SecondRatings {
     
     public SecondRatings() {
         // default constructor
-        //this("ratedmoviesfull.csv", "ratings.csv");
-        this("ratedmovies_short.csv", "ratings_short.csv");
+        this("ratedmoviesfull.csv", "ratings.csv");
+        //this("ratedmovies_short.csv", "ratings_short.csv");
         path = "F:\\Java Specialization\\Course 5 - Build a Recommendation System\\Step Two\\";
     }
     

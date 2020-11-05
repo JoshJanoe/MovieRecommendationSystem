@@ -36,7 +36,7 @@ public class FirstRatings {
     
     public void testLoadMovies () {
         String filename = "ratedmovies_short.csv";
-        //filename = "ratedmoviesfull.csv";
+        filename = "ratedmoviesfull.csv";
         ArrayList<Movie> movies = loadMovies(path+filename);
         int comedies = 0;
         int longMovies = 0;

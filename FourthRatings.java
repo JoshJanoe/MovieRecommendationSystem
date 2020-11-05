@@ -11,6 +11,10 @@ import java.util.Collections;
 
 public class FourthRatings {
    
+    /*public static void main(String[] args) {
+        //System.out.println("Hello World!");
+    }*/
+    
     private double getAverageByID (String id, int minimalRaters) { 
         //id is Movie ID
         double totalRatings = 0;
@@ -112,7 +116,10 @@ public class FourthRatings {
             double currScore = dotProduct(me,r);
             String currID = r.getID();
             Rating currRating = new Rating(currID,currScore);
-            if (currScore>0 && !currID.equals(id)) ratings.add(currRating);
+            if (currScore>0 && !currID.equals(id)) {
+                ratings.add(currRating);
+                //System.out.println(currRating);
+            }
         }   
         Collections.sort(ratings);
         Collections.reverse(ratings);
@@ -139,7 +146,7 @@ public class FourthRatings {
         for (String movie : movies) {
             double totPoints = 0.0;
             double totRatings = 0.0;
-            for (int i=0; i <= numSimilarRaters; i++) {
+            for (int i=0; i < numSimilarRaters; i++) {
                 Rating r = similarities.get(i);
                 String compID = r.getItem();
                 double multiplier = r.getValue();
@@ -164,8 +171,8 @@ public class FourthRatings {
     }
     
     public void testGetSimilarRatings() {
-        RaterDatabase.initialize("ratings_short.csv");
-        MovieDatabase.initialize("ratedmovies_short.csv");
+        RaterDatabase.initialize("ratings.csv");
+        MovieDatabase.initialize("ratedmoviesfull.csv");
         
         String id = "1";
         int numSimilarRaters = 4;   //number of similar ratings starting with the top ranking/most similar
